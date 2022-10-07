@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  {% load mathfilters %}
+<style>
+td{border:solid 3px #5e8; border-radius:5px; text-align:center; padding:5px;}
+input{color:#f00; font-family:futura;}
+button{border:solid 5px #5e8; border-radius:5px; color:#5e8; background-color:#337; text-align:center; font-size:32px; font-family:futura; padding:5px; margin-left:55px; box-shadow: 15px 15px 5px #999;}
+.box{
+width: 700px;
+height: 200px;
+border: 15px solid black;
+}
+</style>
+</head>
+<body>
+<table style="border:2px solid #5e8; border-radius:5px; padding:5px; width:300px; background-color:#337; color:#fff;">
+
+<form action="" method="post" enctype="multipart/form-data">
+  <div>
+  <tr><td>POSN</td><td>Gates</td><td>Gate</td><td>Gate</td><td>Gate</td><td>Gate</td></tr>
+  <tr>
+  <td>q0 |0⟩</td>
+  <td><input name="11" type="text"   value='I' ></td>
+  <td><input name="12" type="text"   value='I' style="width:150px;"></td>
+  <td><input name="13" type="text" maxlength="25"   value='I' style="width:150;"></td>
+  <td><input name="14" type="text" maxlength="25"   value='I' style="width:150;"></td>
+  <td><input name="15" type="text" maxlength="25"   value='I' style="width:150px;"></td>
+
+  </tr>
+  </div>
+  <tr>
+  <td>q1 |0⟩</td>
+  <td><input name="21" type="text"   value='I' ></td>
+  <td><input name="22" type="text" maxlength="25"   value='I' style="width:150px;"></td>
+  <td><input name="23" type="text" maxlength="25"   value='I' style="width:150px;"></td>
+  <td><input name="24" type="text" maxlength="25"   value='I' style="width:150px;"></td>
+  <td><input name="25" type="text" maxlength="25"   value='I' style="width:150px;"></td>
+
+  </tr>
+    <tr>
+  <td>q2 |0⟩</td>
+  <td><input name="31" type="text"   value='I' ></td>
+  <td><input name="32" type="text" maxlength="25"   value='I' style="width:150px;"></td>
+  <td><input name="33" type="text" maxlength="25"   value='I' style="width:150px;"></td>
+  <td><input name="34" type="text" maxlength="25"   value='I' style="width:150px;"></td>
+  <td><input name="35" type="text" maxlength="25"   value='I' style="width:150px;"></td>
+  {% csrf_token %}
+
+  </tr>
+  </table>
+
+      <br>
+      <!--iframe name="Map" src="" style="width:400px; height:300px; "></iframe-->
+
+      <div class="buttonGate">
+      <button type='submit' class="buttong"><span>SET VALUE</span></button>
+
+
+      </div>
+  </form>
+  <div class="box"><h3>{% for p in product %} {% if forloop.counter0|mod:8 %} <br> {% endif %} {{ p }} {% endfor %}</h3></div>
+
+<style>
+    .buttonGate{    
+        cursor: pointer;
+    }
+</style>
+    
+
+
+    
+</body>
+</html>
