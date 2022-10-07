@@ -28,6 +28,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['localhost','gateq.herokuapp.com']
 
+CSRF_TRUSTED_ORIGINS=['https://gateq.herokuapp.com']
 
 # Application definition
 
