@@ -153,10 +153,10 @@ def Quantum_Operator(inputs):
             a=str('|'+states[index]+'>:P['+str(index)+']='+str(abs(ele)))
             list1[n]=a
             index=index+1
-        import matplotlib.pyplot as plt
-        states=['000','001','010','011','100','101','110','111']
-        plt.xlabel('States')
-        plt.ylabel('Probability Score')
-        plt.bar(states,values)
+        # import matplotlib.pyplot as plt
+        # states=['000','001','010','011','100','101','110','111']
+        # plt.xlabel('States')
+        # plt.ylabel('Probability Score')
+        # plt.bar(states,values)
         
         return product,states,values
