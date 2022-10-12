@@ -37,16 +37,17 @@ def cxy(pi):
     return Cxy
 
 def index(request):
-    product=''
+    parameters=''
     if request.method == 'POST':
         a=request.POST.get('21')
         data=request.POST.dict()
         print(data)
         inputs= getlist(data)
         print('inputs',inputs)
-        product=Quantum_Operator(inputs)
-        print(product,product.shape)
-    return render(request,'index (1).html',{'product':product})
+        product,states,values=Quantum_Operator(inputs)
+        print(product,states,product.shape)
+        parameters=zip(product,states,values)
+    return render(request,'index (1).html',{'parameters':parameters})
 
 def getlist(data):
     l1=list(data.values())
@@ -138,5 +139,24 @@ def Quantum_Operator(inputs):
         
         product=np.dot(product,ket000)
         
-        return product
-    
+        ####Changes####
+        
+        norm=np. linalg. norm(product)
+        final=product/norm
+        index=0
+        
+        states=['000','001','010','011','100','101','110','111']
+        values=list(np.diag(final.dot(np.conjugate(final.T))))
+        list1=[0,0,0,0,0,0,0,0]
+        for n,ele in enumerate(values):
+            print(f"|{states[index]}>:P[{str(index)}]={abs(ele)}")
+            a=str('|'+states[index]+'>:P['+str(index)+']='+str(abs(ele)))
+            list1[n]=a
+            index=index+1
+        import matplotlib.pyplot as plt
+        states=['000','001','010','011','100','101','110','111']
+        plt.xlabel('States')
+        plt.ylabel('Probability Score')
+        plt.bar(states,values)
+        
+        return product,states,values
