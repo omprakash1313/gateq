@@ -2,6 +2,10 @@ from django.http import HttpRequest, HttpResponse, QueryDict
 from django.shortcuts import render
 import numpy as np
 import math
+from plotly.offline import plot
+import plotly.graph_objs as go
+from plotly.graph_objs import Scatter
+#env\Scripts\activate 
 
 # Create your views here.
 ket0=np.array([1,0]);
@@ -41,13 +45,12 @@ def index(request):
     if request.method == 'POST':
         a=request.POST.get('21')
         data=request.POST.dict()
-        print(data)
         inputs= getlist(data)
         print('inputs',inputs)
-        product,states,values=Quantum_Operator(inputs)
+        product,states,values,plot_div=Quantum_Operator(inputs)
         print(product,states,product.shape)
-        parameters=zip(product,states,values)
-    return render(request,'index (1).html',{'parameters':parameters})
+        parameters=zip(states,values)
+    return render(request,'new (1).html',{'parameters':parameters,"plot_div":plot_div,'product':product})
 
 def getlist(data):
     l1=list(data.values())
@@ -147,16 +150,21 @@ def Quantum_Operator(inputs):
         
         states=['000','001','010','011','100','101','110','111']
         values=list(np.diag(final.dot(np.conjugate(final.T))))
+        print(values,'values')
         list1=[0,0,0,0,0,0,0,0]
         for n,ele in enumerate(values):
-            print(f"|{states[index]}>:P[{str(index)}]={abs(ele)}")
-            a=str('|'+states[index]+'>:P['+str(index)+']='+str(abs(ele)))
-            list1[n]=a
+            # print(f"|{states[index]}>:P[{str(index)}]={abs(ele)}")
+            values[n]=abs(ele)
             index=index+1
         # import matplotlib.pyplot as plt
         # states=['000','001','010','011','100','101','110','111']
         # plt.xlabel('States')
         # plt.ylabel('Probability Score')
         # plt.bar(states,values)
+
+        plot_div = plot([Scatter(x=states, y=values,
+                            mode='lines+markers', name='test',
+                            opacity=0.8, marker_color='green')],
+                output_type='div')
         
-        return product,states,values
+        return product,states,values,plot_div
