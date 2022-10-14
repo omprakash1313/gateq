@@ -42,6 +42,8 @@ def cxy(pi):
 
 def index(request):
     parameters=''
+    plot_div =''
+    product =''
     if request.method == 'POST':
         a=request.POST.get('21')
         data=request.POST.dict()
@@ -150,7 +152,6 @@ def Quantum_Operator(inputs):
         
         states=['000','001','010','011','100','101','110','111']
         values=list(np.diag(final.dot(np.conjugate(final.T))))
-        print(values,'values')
         list1=[0,0,0,0,0,0,0,0]
         for n,ele in enumerate(values):
             # print(f"|{states[index]}>:P[{str(index)}]={abs(ele)}")
@@ -161,6 +162,7 @@ def Quantum_Operator(inputs):
         # plt.xlabel('States')
         # plt.ylabel('Probability Score')
         # plt.bar(states,values)
+        # print(values,'values')
 
         plot_div = plot([Scatter(x=states, y=values,
                             mode='lines+markers', name='test',
