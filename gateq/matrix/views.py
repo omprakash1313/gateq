@@ -162,10 +162,8 @@ def Quantum_Operator(inputs):
         # plt.xlabel('States')
         # plt.ylabel('Probability Score')
         # plt.bar(states,values)
-        # print(values,'values')
-
         plot_div = plot([Scatter(x=states, y=values,
-                            mode='lines+markers', name='test',
+                            mode='markers', name='test',
                             opacity=0.8, marker_color='green')],
                 output_type='div')
         
