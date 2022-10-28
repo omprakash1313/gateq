@@ -41,6 +41,9 @@ def cxy(pi):
     return Cxy
 
 def index(request):
+     return render(request,'index.html')
+
+def composer(request):
     parameters=''
     plot_div =''
     product =''
@@ -52,7 +55,7 @@ def index(request):
         product,states,values,plot_div=Quantum_Operator(inputs)
         print(product,states,product.shape)
         parameters=zip(states,values)
-    return render(request,'new (1).html',{'parameters':parameters,"plot_div":plot_div,'product':product})
+    return render(request,'composer.html',{'parameters':parameters,"plot_div":plot_div,'product':product})
 
 def getlist(data):
     l1=list(data.values())

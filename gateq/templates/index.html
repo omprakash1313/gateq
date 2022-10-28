@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <!-- basic -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- mobile metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1" />
+    <!-- site metas -->
+    <title>Quantum CAlculator</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
+    <!-- style css -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <!-- Responsive-->
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}" />
+    <!-- fevicon -->
+    <link rel="icon" href="{% static 'images/fevicon.png' %}" type="image/gif" />
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/jquery.mCustomScrollbar.min.css' %}" />
+    <!-- Tweaks for older IEs-->
+    <link
+      rel="stylesheet"
+      href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css"
+      media="screen"
+    />
+  </head>
+  <!-- body -->
+  <body class="main-layout">
+    <!-- loader  -->
+    <div class="loader_bg">
+      <div class="loader"><img src="{% static 'images/loading.gif' %}" alt="#" /></div>
+    </div>
+    <!-- end loader -->
+    <!-- header -->
+    <header>
+      <!-- header inner -->
+      <div class="header">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col logo_section">
+              <div class="full">
+                <div class="center-desk">
+                  <div class="logo">
+                    <a href="{% static 'index.html' %}" 
+                      ><img src="{% static 'images/logo1.webp' %}"  alt="#"
+                    /></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9">
+              <nav class="navigation navbar navbar-expand-md navbar-dark">
+                <button
+                  class="navbar-toggler"
+                  type="button"
+                  data-toggle="collapse"
+                  data-target="#navbarsExample04"
+                  aria-controls="navbarsExample04"
+                  aria-expanded="false"
+                  aria-label="Toggle navigation"
+                >
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarsExample04">
+                  <ul class="navbar-nav mr-auto">
+                  </ul>
+                </div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- end header inner -->
+    <!-- end header -->
+    <!-- banner -->
+    <section class="banner_main">
+      <div class="container-fluid">
+        <div class="row d_flex">
+          <div class="col-xl-6 col-lg-6 col-md-12 padding_lert2">
+            <div class="text-img">
+              <figure><img src="{% static 'images/back.jpg' %}" alt="#" /></figure>
+            </div>
+          </div>
+          <div class="col-xl-6 col-lg-6 col-md-12">
+            <div class="text-bg">
+              <h1>Quantum Number Calculator</h1>
+              <span
+                >Free Multipurpose<br />
+                Calculator <br />
+              </span>
+              <div class="button">
+                <a
+                  href="\composer"
+                  class="btn btn-primary active"
+                  role="button"
+                  data-bs-toggle="button"
+                  aria-pressed="true"
+                  style="margin-right: 55rem; padding: 20px"
+                  >Go To Composer</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- end banner -->
+
+    <br />
+    <br />
+
+    <!-- services -->
+    <div class="services">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="titlepage">
+              <h2>Defined Functions</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bg_full">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="row">
+                <div class="col-xl-4 col-lg-4 col-md-4 margin_bott">
+                  <div id="color_chang" class="services_box">
+                    <figure><img src="{% static 'images/Matris.png' %}" alt="#" /></figure>
+                    <h3>retrieve_matrix(gate)</h3>
+                    <p>
+                      This function gets the given matrix after reading the
+                      inputs given by the user.
+                    </p>
+                  </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-4 margin_bott">
+                  <div id="color_chang" class="services_box">
+                    <figure><img src="{% static 'images/quantum.jpg' %}" alt="#" /></figure>
+                    <h3>kr_product(inputs)</h3>
+                    <p>
+                      This function gives the Kronecker product of the given
+                      inputs. A Kronecker tensor product of A and B matrices is
+                      found by multiplying B with every element of A (commonly
+                      denoted as A⊗B). If A is an m-by-n matrix and B is a
+                      p-by-q matrix, then kron(A,B) is an m*p-by-n*q matrix.
+                    </p>
+                  </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-4">
+                  <div id="color_chang" class="services_box">
+                    <figure><img src="{% static 'images/asdf.jpg' %}" alt="#" /></figure>
+                    <h3>Matrix_mult(x,y):</h3>
+                    <p>
+                      This function gives the matrix multiplication of the given
+                      inputs. This function is a primary requirement when
+                      finding final states, for example, by multiplying operator
+                      with 3-qubit basis state
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <a class="read_more" href="#">Read More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end services -->
+    </div>
+    <!-- achieved  section -->
+    <div class="achieved">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="titlepage">
+              <span><h1>Gates</h1></span>
+              <h3>
+                Quantum_Operator(inputs) : This is the main function which takes
+                in the inputs given by the user and gives the final states,
+                probability scores and plots the bar plot for the probability
+                scores. There are currently 7 different gate configuration
+                inputs possible. Namely, SX, I, H, Cxx, Cnot, R(th1) and
+                Cxy(th2).
+              </h3>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="achieved_box">
+              <span>Gate</span>
+              <div class="start">
+                <h3>SX : sigma X gate</h3>
+                <p>Sigma X gate, defined generally as: sigma x=[0 1;1 0]</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="achieved_box">
+              <span>Gate</span>
+              <div class="start">
+                <h3>I : Identity gate</h3>
+                <p>
+                  It is a long established fact that a reader will be distracted
+                  by the readable content of a page when looking at its layout.
+                  The point of using Lorem Ipsum is that it has a more-or-less
+                  normal distribution of letters, as opposed to using 'Content
+                  here, content here', making it.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="achieved_box">
+              <span>Gate</span>
+              <div class="start">
+                <h3>Cnot : Controlled not gate</h3>
+                <p>
+                  A cnot gate is one of the gates which are realized by setting
+                  specific values of rotation angles in these general
+                  controlled-unitary gates the cnot gate corresponds to θ = π
+                  rotation of the qubit.(1-control, 3- target) Cxx: the cxx
+                  gate. It corresponds to the polarization selective spatial
+                  light modulator (PS-SLM) [2] operation done on separable
+                  states.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="achieved_box">
+              <span>Gate</span>
+              <div class="start">
+                <h3>Cxx : cxx gate</h3>
+                <p>
+                  The cxx gate. It corresponds to the polarization selective
+                  spatial light modulator (PS-SLM) [2] operation done on
+                  separable states.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="achieved_box">
+              <span>Gate</span>
+              <div class="start">
+                <h3>H: Hadamard gate</h3>
+                <p>
+                  It's a single qubit operation that maps the basis ∣0⟩ to
+                  ∣0⟩+∣1⟩/ 2 and basis ∣1⟩ to ∣0⟩ -∣1⟩/ 2. Thus creating equal
+                  superpositions of 2 basis states
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <a class="read_more" href="#">Read More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end achieved  section --><br />
+    <style>
+      .card {
+        margin-left: 40px;
+        margin-right: 40px;
+        font-family: 'Poppins', sans-serif;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        transition: 0.3s;
+        padding: 2px 16px;
+        border-radius: 5px 5px 0 0;
+        font-size: 20px;
+        margin-bottom:10px;
+      }
+      .card:hover {
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.5);
+      }
+    </style>
+    <div class="card">
+      <div class="card-body">
+        <h1>Directions:</h1>
+        <br />
+        1) A list is initiated which stores each column of gates as a list.<br />
+        2) Iterate through each list(column) in the initiated list.<br />
+        3) retrieve_matrix retrieves the given matrix in the input, if a matrix
+        is given with a<br />
+        parameter, then it calculates and returns the resultant matrix.<br />
+        4) After all the matrices are retrieved kr_product is used to perform
+        Kronecker product of all the matrices present in each column and the
+        resultant output is stored. <br />
+        5) If the matrix in any column is of size 8*8, then that matrix is
+        stored as is and other gates in the column are ignored. Note- Any 8*8
+        matrix should be placed in the first element of the column.<br />
+        6) After the iteration is complete, Kronecker products of the column
+        elements are stored.<br />
+        7) Now function matrix_mult is used to perform matrix multiplication of
+        all the resultant Kronecker products of the column elements.<br />
+        8) Resultant output is operated on the initial state |000>.
+        <br /><br /><br />
+        <h1>Directions For usage:</h1>
+        <br />
+        1)  The first thing displayed on the GUI is a table with 5
+        columns and 3 rows. The columns are meant for various gates to be
+        employed to any of the 3 rows which represent the states.<br />
+        2) Available gate options can be viewed from the repository on the right
+        side of the screen. The repository is a list of gates and indicates the
+        symbol for each gate.<br />
+        3) Note that, a default ‘I’ can be observed written in each cell of the
+        table. This is the identity matrix. To use a gate in a particular
+        position, the ‘I’ is to be removed and the gate symbol needs to be typed
+        in the above-mentioned table.<br />
+        4) After the gates have been entered, the ‘SET VALUE’ button should be
+        clicked to view the result of operations performed.<br />
+        5) These results are printed on the screen in the form of a simple 8*1
+        matrix and also a dot graph for visualisation.
+      </div>
+    </div>
+    <!--  footer -->
+
+    <!-- Javascript files-->
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'js/jquery-3.0.0.min.js' %}"></script>
+    <script src="{% static 'js/plugin.js' %}"></script>
+    <!-- sidebar -->
+    <script src="{% static 'js/jquery.mCustomScrollbar.concat.min.js' %}"></script>
+    <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+    <script src="{% static 'js/custom.js' %}"></script>
+  </body>
+</html>
