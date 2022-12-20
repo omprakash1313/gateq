@@ -7,6 +7,9 @@ import plotly.graph_objs as go
 from plotly.graph_objs import Scatter
 #env\Scripts\activate 
 
+def matAnimation(request):
+     return render(request,'matAnimation.html')
+
 # Create your views here.
 ket0=np.array([1,0]);
 ket1 =np.array([1,0]);
@@ -171,3 +174,5 @@ def Quantum_Operator(inputs):
                 output_type='div')
         
         return product,states,values,plot_div
+    
+    
